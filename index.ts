@@ -398,7 +398,7 @@ No Markdown blocks, no explanations. ONLY pure JSON array.
                         country: geo?.country || null,
                     });
                 });
-                Promise.all(insertPromises).catch(err => console.error('[OCR] Failed to log scan_records:', err));
+                await Promise.all(insertPromises).catch(err => console.error('[OCR] Failed to log scan_records:', err));
             }
         } catch (geoError) {
             console.error('[OCR] Geolocation tracking error:', geoError);
